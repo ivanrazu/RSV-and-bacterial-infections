@@ -9,8 +9,8 @@ library(tidymv)
 library(readxl)
 
 # Load data
-data_infants <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SP_summarized/GAM_RSV&SP_Infants.xlsx")
-data_mothers <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SP_summarized/GAM_RSV&SP_Mothers.xlsx")
+data_infants <- read_excel("GAM_RSV&SP_Infants.xlsx")
+data_mothers <- read_excel("GAM_RSV&SP_Mothers.xlsx")
 
 # Define the first plot
 gam1 <- gam(Ct ~ s(days, bs = "cr"), data = data_infants )
@@ -43,14 +43,12 @@ plot1 <- grid.arrange(plot_obj1_with_data+ theme(strip.text.x = element_blank())
 
 
 # # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SP_summarized/GAM_infants_RSV&SP_v2.png",
+# ggsave(file = "GAM_infants_RSV&SP.png",
 #        plot = plot1,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches
 #        units = "in",  # Specify units as inches
 #        dpi = 100)  # Adjust DPI as needed
-
-
 
 
 # Define the second plot
@@ -85,14 +83,13 @@ plot2 <- grid.arrange(plot_obj2_with_data+ theme(strip.text.x = element_blank())
 
 
 # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SP_summarized/GAM_mothers_RSV&SP_v2.png",
+# ggsave(file = "GAM_mothers_RSV&SP.png",
 #        plot = plot2,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches
 #        units = "in",  # Specify units as inches
 #        dpi = 100)  # Adjust DPI as needed
 # 
-
 
 comp <- compare_smooths(gam1, gam2)
 draw(comp)

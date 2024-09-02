@@ -8,11 +8,9 @@ library(dplyr)
 library(tidymv)
 library(readxl)
 
-library(caret)
-
 # Load data
-data_infants <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SP_summarized/GAM_RSV_only_Infants.xlsx")
-data_mothers <-read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SP_summarized/GAM_RSV_only_Mothers.xlsx")
+data_infants <- read_excel("GAM_RSV_only_Infants.xlsx")
+data_mothers <-read_excel("GAM_RSV_only_Mothers.xlsx")
 
 
 
@@ -49,14 +47,12 @@ plot1 <- grid.arrange(plot_obj1_with_data+ theme(strip.text.x = element_blank())
 
 
 # # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SP_summarized/GAM_virus_infants_RSV_only_v2.png",
+# ggsave(file = "GAM_virus_infants_RSV_only.png",
 #        plot = plot1,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches
 #        units = "in",  # Specify units as inches
 #        dpi = 100)  # Adjust DPI as needed
-
-
 
 
 
@@ -91,10 +87,16 @@ plot2 <- grid.arrange(plot_obj2_with_data+ theme(strip.text.x = element_blank())
 
 
 # Save the plot as a PNG file
-ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SP_summarized/GAM_virus_mothers_RSV_only_v2.png",
-       plot = plot2,
-       width = 8,  # Width in inches
-       height = 6,  # Height in inches
-       units = "in",  # Specify units as inches
-       dpi = 100)  # Adjust DPI as needed
+# ggsave(file = "AM_virus_mothers_RSV_only.png",
+#        plot = plot2,
+#        width = 8,  # Width in inches
+#        height = 6,  # Height in inches
+#        units = "in",  # Specify units as inches
+#        dpi = 100)  # Adjust DPI as needed
 # 
+# comp <- compare_smooths(gam1, gam2)
+# draw(comp)
+# 
+# 
+# summary(gam1)
+# summary(gam2)

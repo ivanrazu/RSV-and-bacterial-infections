@@ -11,8 +11,8 @@ library(readxl)
 library(caret)
 
 # Load data
-data_infants <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SP_summarized/GAM_virus_RSV_SP_infants.xlsx")
-data_mothers <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SP_summarized/GAM_virus_RSV_SP_mothers.xlsx")
+data_infants <- read_excel("GAM_virus_RSV_SP_infants.xlsx")
+data_mothers <- read_excel("GAM_virus_RSV_SP_mothers.xlsx")
 
 
 
@@ -47,9 +47,8 @@ plot_obj1_with_data <- plot_obj1_with_data + geom_line(color = "red", size = 1.5
 plot1 <- grid.arrange(plot_obj1_with_data+ theme(strip.text.x = element_blank()), nrow = 1)
 
 
-
 # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SP_summarized/GAM_virus_infants_RSV_SP_v2.png",
+# ggsave(file = "GAM_virus_infants_RSV_SP.png",
 #        plot = plot1,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches
@@ -111,18 +110,12 @@ plot2 <- grid.arrange(plot_obj2_with_data+ theme(strip.text.x = element_blank())
 
 
 # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SP_summarized/GAM_virus_mothers_RSV_SP_v2.png",
+# ggsave(file = "GAM_virus_mothers_RSV_SP_v2.png",
 #        plot = plot2,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches
 #        units = "in",  # Specify units as inches
 #        dpi = 100)  # Adjust DPI as needed
-
-
-
-comp <- compare_smooths(gam1, gam2)
-draw(comp)
-
 
 
 summary(gam1)
