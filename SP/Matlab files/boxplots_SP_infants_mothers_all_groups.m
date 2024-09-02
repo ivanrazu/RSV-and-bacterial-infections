@@ -106,18 +106,15 @@ X={[MM1m.SP_Ct,MM2m.SP_Ct,MM3m.SP_Ct,MM5m.SP_Ct],[MM1c.SP_Ct,MM2c.SP_Ct,MM3c.SP_
 
 col_bl=[0 0.4470 0.7410];
 col_blk=[0,0,0];
-col_yl=[0.9290 0.6940 0.1250];
-col_prpl=[0.4940 0.1840 0.5560];
-col_org=[0.8500 0.3250 0.0980];
 
-
+%%
 cols=1;
 rows=1;
-fig=figure
+fig=figure;
 xSize = cols*18; Xs=xSize; ySize = rows*12;xLeft = (xSize-xSize)/2; Ys=ySize; yTop = (ySize-ySize)/2;
 set(gcf,'PaperPosition',[xLeft yTop xSize ySize]);
 set(gcf,'Position',[100 25 xSize*50 ySize*55]);
-boxplotGroup(X,'Colors',[col_bl;col_blk;col_yl;col_prpl],'GroupType','betweenGroups','Symbol','','groupLines', true);
+boxplotGroup(X,'Colors',[col_bl;col_blk],'GroupType','betweenGroups','Symbol','','groupLines', true);
 
 hold on;
 scatter(1*ones(1,length(MM1m.SP_Ct)),MM1m.SP_Ct,200,'filled','MarkerFaceColor',col_bl,'MarkerFaceAlpha',0.6','jitter','on','jitterAmount',0.15);
@@ -170,7 +167,6 @@ if yxis_reverse==0
     hold on
     plot(xt([10 11]), [1 1]*max(yt)*1.05, 'k-','LineWidth',6)
 end
-
 
 if yxis_reverse==1
 set(gca, 'YDir', 'reverse')

@@ -392,22 +392,16 @@ pmc=[p1a,p2a,p3a,p4a];
 
 % Check for significant differences
 alpha = 0.05;  % Set significance level
-for i=1:4
+group_labels = {'SP->RSV', 'RSV&SP', 'RSV->SP', 'SP only'};
+
+for i = 1:4
     if pmc(i) < alpha
-        fprintf('Infants Abx vs No Abx Group %d are significantly different p=%f.\n', i, pmc(i) );
+        fprintf('Infants Abx vs No Abx are significantly different in %s (p = %f).\n', group_labels{i}, pmc(i));
     else
-        fprintf('Infants Abx vs No Abx Group %d are NOT significantly different p=%f.\n', i, pmc(i) );
+        fprintf('Infants Abx vs No Abx are NOT significantly different in %s (p = %f).\n', group_labels{i}, pmc(i));
     end
 end
 
-
-
-%% T-test
-
-[h1,p1]=ttest2(M3a_new.SP_CT,M3b_new.SP_CT)
-[h2,p2]=ttest2(M5a_new.SP_CT,M5b_new.SP_CT)
-[h3,p3]=ttest2(M3a_new.SP_CT,M5a_new.SP_CT)
-[h4,p4]=ttest2(M3b_new.SP_CT,M5b_new.SP_CT)
 
 %%
 rng(123)
@@ -446,8 +440,6 @@ set(gcf, 'PaperPosition', [xLeft yTop xSize ySize]);
 set(gcf, 'Position', [100 25 xSize * 50 ySize * 55]);
 boxplotGroup(X, 'Colors', [col_blk; col_blk; col_blk; col_blk], 'GroupType', 'betweenGroups', 'Symbol', '', 'groupLines', true);
 
-jitterAmount = 0.15;
-% dot_size = 300;
 
 hold on;
 scatter(1*ones(1,length(M1a_new.SP_CT)), M1a_new.SP_CT, dot_size, 'filled', 'MarkerFaceColor', col_blk, 'MarkerFaceAlpha', 0.6,'jitter','on','jitterAmount',0.15);
@@ -528,5 +520,3 @@ if yxis_reverse == 1
     set(gca, 'YTickLabel', {'20', '30', '40'});
 end
 
-
-% saveas(gcf,'ABx_infants_v4.png')

@@ -92,33 +92,8 @@ meanMMc = groupsummary(MMc,'group','mean');
 col_bl=[0 0.4470 0.7410];
 col_blk=[0,0,0];
 
-
-%% %% two sample Wilcoxon rank sum test Infants vs Mothers by group
-
-% t-test 
-% [h1a,p1a]=ttest2(MM1m.RSV_Ct,MM1c.RSV_Ct);
-% [h2a,p2a]=ttest2(MM2m.RSV_Ct,MM2c.RSV_Ct);
-% [h3a,p3a]=ttest2(MM3m.RSV_Ct,MM3c.RSV_Ct);
-% [h4a,p4a]=ttest2(MM4m.RSV_Ct,MM4c.RSV_Ct);
-
-[p1a,h1a]=ranksum(MM1m.RSV_Ct,MM1c.RSV_Ct);
-[p2a,h2a]=ranksum(MM2m.RSV_Ct,MM2c.RSV_Ct);
-[p3a,h3a]=ranksum(MM3m.RSV_Ct,MM3c.RSV_Ct); 
-[p4a,h4a]=ranksum(MM4m.RSV_Ct,MM4c.RSV_Ct); 
-
-pmc=[p1a,p2a,p3a,p4a];
-
-% Check for significant differences
-alpha = 0.05;  % Set significance level
-for i=1:4
-    if pmc(i) < alpha
-        fprintf('Infants-Mothers Group %d are significantly different p=%f.\n', i, pmc(i) );
-    else
-        fprintf('Infants-Mothers Group %d are NOT significantly different p=%f.\n', i, pmc(i) );
-    end
-end
-
-
+ 
+ alpha = 0.05;  % Set significance level
 
 %% boxplot mothers only
 
@@ -172,8 +147,6 @@ end
 
 
 set(gca,'Fontsize',60);box on;
-
-% saveas(gcf,'boxplot_RSV_mothers_v4.png');
 
  %%   T-test among mother groups
 
@@ -319,9 +292,6 @@ set(findobj(gca,'type','line'),'linew',4)
 set(gca,'linew',4)
 xtickangle(30)
 
-
-% [pp,tbl1,stats1]=anova1([MM1c.RSV_Ct,MM2c.RSV_Ct,MM3c.RSV_Ct,MM4c.RSV_Ct])
-% results = multcompare(stats1);
 ylim([16,45])
 
 
@@ -336,7 +306,6 @@ end
 
 set(gca,'Fontsize',60);box on;
 
-% saveas(gcf,'boxplot_RSV_infants_v4.png');
 
 %% t-test among infant groups
 
@@ -401,8 +370,6 @@ if ~isempty(significant_indices_ttest_BH_c)
 else
     disp('No significant differences in Infant Groups were found according to t-test with FDR correction.');
 end
-
-
 
 %% %% Wilcoxon rank sum test among infants 
 [pwc1,hwc1,statswc1] = ranksum(MM1c.RSV_Ct,MM2c.RSV_Ct);
