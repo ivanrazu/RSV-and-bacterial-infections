@@ -14,7 +14,7 @@ library(caret)
 # There are no mothers in this group
 
 # Load data
-data_infants <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_RSV&SA_Infants.xlsx")
+data_infants <- read_excel("GAM_RSV&SA_Infants.xlsx")
 
 
 
@@ -71,7 +71,7 @@ plot1 <- grid.arrange(plot_obj1_with_data+ theme(strip.text.x = element_blank())
 
 
 # # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_infants_RSV&SA_v2.png",
+# ggsave(file = "GAM_infants_RSV&SA.png",
 #        plot = plot1,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches

@@ -11,8 +11,8 @@ library(readxl)
 library(caret)
 
 # Load data
-data_infants <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_virus_SA_RSV_infants.xlsx")
-data_mothers <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_virus_SA_RSV_mothers.xlsx")
+data_infants <- read_excel("GAM_virus_SA_RSV_infants.xlsx")
+data_mothers <- read_excel("GAM_virus_SA_RSV_mothers.xlsx")
 
 #########################################################
 # Because without specifying k get over fitting issues
@@ -35,17 +35,6 @@ best_k <- k_values[which.min(aic_values)]
 
 
 # Define the first plot
-# gam1 <- gam(Ct ~ s(days, bs = "cr", k=2), data = data_infants)
-# plot_obj1 <- plot(ggeffects::ggpredict(gam1), facets = TRUE) +
-#   geom_ribbon(aes(ymin = conf.low, ymax = conf.high), fill = "white", alpha = 1) +
-#   coord_cartesian(xlim = c(0, 125), ylim = c(45, 20)) +  # Set the y-axis limits in reverse order
-#   labs(x = "Infant age (days)", y = "RSV Ct") +
-#   scale_x_continuous(breaks = c(0, 30, 60, 90, 120)) +  # Set the x-axis ticks
-#   theme(axis.text = element_text(size = 30)) +
-#   theme(text = element_text(size = 30)) +
-#   ggtitle("")  # Set a blank title
-
-
 linear_model_infants <- lm(Ct ~ days, data = data_infants)
 plot_obj1 <- plot(ggeffects::ggpredict(linear_model_infants), facets = TRUE) +
   geom_ribbon(aes(ymin = conf.low, ymax = conf.high), fill = "white", alpha = 1) +
@@ -74,17 +63,13 @@ plot_obj1_with_data <- plot_obj1_with_data + geom_line(color = "red", size = 1.5
 
 plot1 <- grid.arrange(plot_obj1_with_data+ theme(strip.text.x = element_blank()), nrow = 1)
 
-
-
 # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_virus_infants_SA_RSV_v2.png",
+# ggsave(file = "GAM_virus_infants_SA_RSV.png",
 #        plot = plot1,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches
 #        units = "in",  # Specify units as inches
 #        dpi = 100)  # Adjust DPI as needed
-
-
 
 
 #########################################################
@@ -138,12 +123,14 @@ plot2 <- grid.arrange(plot_obj2_with_data+ theme(strip.text.x = element_blank())
 
 
 # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_virus_mothers_SA_RSV_v2.png",
+# ggsave(file = "GAM_virus_mothers_SA_RSV.png",
 #        plot = plot2,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches
 #        units = "in",  # Specify units as inches
 #        dpi = 100)  # Adjust DPI as needed
 
+summary(linear_model_infants)
+summary(gam2)
 
 

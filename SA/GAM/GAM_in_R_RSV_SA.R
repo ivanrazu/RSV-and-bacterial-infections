@@ -13,8 +13,8 @@ library(caret)
 
 # Instead of GAM I am using linear regression as there is not enough data
 # Load data
-data_infants <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_RSV_SA_infants.xlsx")
-data_mothers <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_RSV_SA_mothers.xlsx")
+data_infants <- read_excel("GAM_RSV_SA_infants.xlsx")
+data_mothers <- read_excel("GAM_RSV_SA_mothers.xlsx")
 
 
 #########################################################
@@ -70,15 +70,12 @@ plot1 <- grid.arrange(plot_obj1_with_data+ theme(strip.text.x = element_blank())
 
 
 # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_infants_RSV_SA_v2.png",
+# ggsave(file = "GAM_infants_RSV_SA.png",
 #        plot = plot1,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches
 #        units = "in",  # Specify units as inches
 #        dpi = 100)  # Adjust DPI as needed
-
-
-
 
 #########################################################
 # Because without specifying k get over fitting issues
@@ -131,7 +128,7 @@ plot2 <- grid.arrange(plot_obj2_with_data+ theme(strip.text.x = element_blank())
 
 
 # Save the plot as a PNG file
-ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_mothers_RSV_SA_v2.png",
+ggsave(file = "GAM_mothers_RSV_SA.png",
        plot = plot2,
        width = 8,  # Width in inches
        height = 6,  # Height in inches

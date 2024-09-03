@@ -12,8 +12,8 @@ library(caret)
 
 
 # Load data
-data_infants <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_SA_RSV_Infants.xlsx")
-data_mothers <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_SA_RSV_Mothers.xlsx")
+data_infants <- read_excel("GAM_SA_RSV_Infants.xlsx")
+data_mothers <- read_excel("GAM_SA_RSV_Mothers.xlsx")
 
 #########################################################
 # Because without specifying k get over fitting issues
@@ -69,7 +69,7 @@ plot1 <- grid.arrange(plot_obj1_with_data+ theme(strip.text.x = element_blank())
 
 
 # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_infants_SA_RSV_v2.png",
+# ggsave(file = "GAM_infants_SA_RSV.png",
 #        plot = plot1,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches
@@ -109,7 +109,7 @@ plot2 <- grid.arrange(plot_obj2_with_data+ theme(strip.text.x = element_blank())
 
 
 # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_mothers_SA_RSV_v2.png",
+# ggsave(file = "GAM_mothers_SA_RSV.png",
 #        plot = plot2,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches

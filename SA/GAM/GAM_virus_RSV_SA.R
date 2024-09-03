@@ -12,8 +12,8 @@ library(caret)
 
 
 # Load data
-data_infants <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_virus_RSV_SA_infants.xlsx")
-data_mothers <- read_excel("C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_virus_RSV_sA_mothers.xlsx")
+data_infants <- read_excel("GAM_virus_RSV_SA_infants.xlsx")
+data_mothers <- read_excel("GAM_virus_RSV_sA_mothers.xlsx")
 
 # A larger k would lead to over fitting 
 
@@ -50,15 +50,13 @@ plot1 <- grid.arrange(plot_obj1_with_data+ theme(strip.text.x = element_blank())
 
 
 # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_virus_infants_RSV_SA_v2.png",
+# ggsave(file = "GAM_virus_infants_RSV_SA_v2.png",
 #        plot = plot1,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches
 #        units = "in",  # Specify units as inches
 #        dpi = 100)  # Adjust DPI as needed
 # 
-
-
 
 
 # There are only 4 data points in mothers
@@ -71,17 +69,6 @@ plot_obj2 <- plot(ggeffects::ggpredict(linear_model_mothers), facets = TRUE) +
   theme(axis.text = element_text(size = 30)) +
   theme(text = element_text(size = 30)) +
   ggtitle("")  # Set a blank title
-# 
-
-# gam2 <- gam(Ct ~ s(days, bs = "cr",k=2), data = data_mothers )
-# plot_obj2 <- plot(ggeffects::ggpredict(gam2), facets = TRUE) +
-#   geom_ribbon(aes(ymin = conf.low, ymax = conf.high), fill = "white", alpha = 1) +
-#   coord_cartesian(xlim = c(0, 125), ylim = c(45, 20)) +  # Set the y-axis limits in reverse order
-#     labs(x = "Infant age (days)", y = "RSV Ct") +
-#   scale_x_continuous(breaks = c(0, 30, 60, 90, 120)) +  # Set the x-axis ticks
-#   theme(axis.text = element_text(size = 30)) +
-#   theme(text = element_text(size = 30)) +
-#   ggtitle("")  # Set a blank title
 
 
 plot_obj2_with_data <- plot_obj2 + geom_ribbon(aes(ymin = conf.low, ymax = conf.high), fill = "red", alpha = 0.2)
@@ -104,7 +91,7 @@ plot2 <- grid.arrange(plot_obj2_with_data+ theme(strip.text.x = element_blank())
 
 
 # Save the plot as a PNG file
-# ggsave(file = "C:/Users/ivanr/Documents/SAMIPS Project/RSV_SA_summarized/GAM_virus_mothers_RSV_SA_v2.png",
+# ggsave(file = "GAM_virus_mothers_RSV_SA.png",
 #        plot = plot2,
 #        width = 8,  # Width in inches
 #        height = 6,  # Height in inches
@@ -112,6 +99,8 @@ plot2 <- grid.arrange(plot_obj2_with_data+ theme(strip.text.x = element_blank())
 #        dpi = 100)  # Adjust DPI as needed
 # 
 
+
+summary(gam1)
 
 
 
