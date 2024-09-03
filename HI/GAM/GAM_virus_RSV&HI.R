@@ -1,0 +1,102 @@
+library(ggplot2)
+library(gridExtra)
+library(gratia)
+library(cowplot)
+library(mgcv)
+theme_set(theme_bw())
+library(dplyr)
+library(tidymv)
+library(readxl)
+
+library(caret)
+
+# Load data
+data_infants <- read_excel("GAM_virus_RSV&HI_infants.xlsx")
+data_mothers <- read_excel("GAM_virus_RSV&HI_mothers.xlsx")
+
+
+# Since there are only 2 data points infants linear model is the only option
+
+# Define the first plot
+linear_model_infants <- lm(Ct ~ days, data = data_infants)
+plot_obj1 <- plot(ggeffects::ggpredict(linear_model_infants), facets = TRUE) +
+  # geom_ribbon(aes(ymin = conf.low, ymax = conf.high), fill = "white", alpha = 1) +
+  coord_cartesian(xlim = c(0, 125), ylim = c(45, 20)) +  # Set the y-axis limits in reverse order
+  labs(x = "Infant age (days)", y = "RSV Ct") +
+  scale_x_continuous(breaks = c(0, 30, 60, 90, 120)) +  # Set the x-axis ticks
+  theme(axis.text = element_text(size = 30)) +
+  theme(text = element_text(size = 30)) +
+  ggtitle("")  # Set a blank title
+
+
+# plot_obj1_with_data <- plot_obj1 + geom_ribbon(aes(ymin = conf.low, ymax = conf.high), fill = "red", alpha = 0.2)
+
+# Overlay data on smooths for the first plot
+plot_obj1_with_data <- plot_obj1 + geom_point(data = data_infants, aes(x = days, y = Ct), size = 8,shape=23,fill="black", color="black",alpha = 0.6)
+
+
+# Increase the thickness of x and y axes
+plot_obj1_with_data <- plot_obj1_with_data +
+  theme(axis.text = element_text(size = 30),
+        axis.line = element_line(linewidth = 2),  # Adjust the line width here
+        text = element_text(size = 30))+
+  guides(color = "none")  # Remove the color legend
+
+plot_obj1_with_data <- plot_obj1_with_data + geom_line(color = "red", size = 1.5)
+
+
+plot1 <- grid.arrange(plot_obj1_with_data+ theme(strip.text.x = element_blank()), nrow = 1)
+
+
+
+# Save the plot as a PNG file
+# ggsave(file = "GAM_virus_infants_RSV&HI.png",
+#        plot = plot1,
+#        width = 8,  # Width in inches
+#        height = 6,  # Height in inches
+#        units = "in",  # Specify units as inches
+#        dpi = 100)  # Adjust DPI as needed
+# 
+# 
+
+linear_model_mothers <- lm(Ct ~ days, data = data_mothers)
+
+plot_obj2 <- plot(ggeffects::ggpredict(linear_model_mothers), facets = TRUE) +
+  coord_cartesian(xlim = c(0, 125), ylim = c(45, 20)) +  # Set the y-axis limits in reverse order
+  labs(x = "Infant age (days)", y = "RSV Ct") +
+  scale_x_continuous(breaks = c(0, 30, 60, 90, 120)) +  # Set the x-axis ticks
+  theme(axis.text = element_text(size = 30)) +
+  theme(text = element_text(size = 30)) +
+  ggtitle("")  # Set a blank title
+  
+
+
+# Overlay data on smooths for the first plot
+plot_obj2_with_data <- plot_obj2 + geom_point(data = data_mothers, aes(x = days, y = Ct), size = 8,shape=23,,fill="#3399CC",color = "#3399CC",alpha = 0.7)
+
+
+# Increase the thickness of x and y axes
+plot_obj2_with_data <- plot_obj2_with_data +
+  theme(axis.text = element_text(size = 30),
+        axis.line = element_line(linewidth = 2),  # Adjust the line width here
+        text = element_text(size = 30))+
+  guides(color = "none")  # Remove the color legend
+
+plot_obj2_with_data <- plot_obj2_with_data + geom_line(color = "red", size = 1.5)
+
+
+plot2 <- grid.arrange(plot_obj2_with_data+ theme(strip.text.x = element_blank()), nrow = 1)
+
+
+# Save the plot as a PNG file
+# ggsave(file = "GAM_virus_mothers_RSV&HI.png",
+#        plot = plot2,
+#        width = 8,  # Width in inches
+#        height = 6,  # Height in inches
+#        units = "in",  # Specify units as inches
+#        dpi = 100)  # Adjust DPI as needed
+# 
+
+
+summary(linear_model_infants)
+summary(linear_model_mothers)
