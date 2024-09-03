@@ -377,16 +377,16 @@ VV5=[ones(length(M5a_new.SP_CT),1); 2*ones(length(M5b_new.SP_CT),1) ];
 
 %% T-test
 
-[h1,p1]=ttest2(M1a_new.SP_CT,M1b_new.SP_CT);%%% p= 0.1227
+[h1,p1]=ttest2(M1a_new.SP_CT,M1b_new.SP_CT);%%% p= 0.2186
 [h2,p2]=ttest2(M2a_new.SP_CT,M2b_new.SP_CT);%%% p=0.6578
-[h3,p3]=ttest2(M3a_new.SP_CT,M3b_new.SP_CT);%%% p=0.7979
-[h4,p4]=ttest2(M5a_new.SP_CT,M5b_new.SP_CT);%%% p=0.0259
+[h3,p3]=ttest2(M3a_new.SP_CT,M3b_new.SP_CT);%%% p=0.8579
+[h4,p4]=ttest2(M5a_new.SP_CT,M5b_new.SP_CT);%%% p=0.0206
 %%
 
-[p1a,h1a]=ranksum(M1a_new.SP_CT,M1b_new.SP_CT); %% p=0.113945
+[p1a,h1a]=ranksum(M1a_new.SP_CT,M1b_new.SP_CT); %% p=0.266667
 [p2a,h2a]=ranksum(M2a_new.SP_CT,M2b_new.SP_CT); %% p=0.785028
-[p3a,h3a]=ranksum(M3a_new.SP_CT,M3b_new.SP_CT); %% p=0.770335
-[p4a,h4a]=ranksum(M5a_new.SP_CT,M5b_new.SP_CT); %% p=0.024974
+[p3a,h3a]=ranksum(M3a_new.SP_CT,M3b_new.SP_CT); %% p=0.868951
+[p4a,h4a]=ranksum(M5a_new.SP_CT,M5b_new.SP_CT); %% p=0.016994
 
 pmc=[p1a,p2a,p3a,p4a];
 
