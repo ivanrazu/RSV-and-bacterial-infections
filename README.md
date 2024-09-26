@@ -26,8 +26,6 @@ To simplify the analysis of potential interactions between RSV and each bacteria
 5. **RSV Only (RSV Only)**: Individuals infected with RSV but not the specific bacterium under consideration at the time of analysis (note that they may have been infected with other bacteria).
 6. **Neither (Neither)**: Individuals who remained free of both RSV and the specific bacterium under consideration during the study duration (note that they may have been infected with other bacteria).
 
-This classification scheme allows us to systematically investigate the interactions between RSV and each bacterial species within this population.
-
 We use generalized additive models (GAM) to analyze and visualize the temporal relationship between RSV infection and subsequent bacterial carriage for each pathogen separately under these various scenarios.
 
 ## Directory Structure
