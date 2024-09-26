@@ -51,7 +51,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For questions, suggestions, please contact:
 
-Name: [Ivan Ramirez-Zuniga]
-Email: [iramirezzuniga@uttyler.edu]
-Affiliation: [University of Texas at Tyler, Department of Mathematics]
+- Name: Ivan Ramirez-Zuniga
+- Email: iramirezzuniga@uttyler.edu
+- Affiliation: University of Texas at Tyler, Department of Mathematics
 
