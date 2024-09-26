@@ -10,7 +10,6 @@ This repository contains the code and data analysis for the project investigatin
 1. [Project Overview](#project-overview)
 2. [Directory Structure](#directory-structure)
 3. [Data Description](#data-description)
-5. [Usage](#usage)
 6. [Scripts and Analysis](#scripts-and-analysis)
 9. [License](#license)
 10. [Contact](#contact)
