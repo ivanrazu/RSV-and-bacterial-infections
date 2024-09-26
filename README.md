@@ -15,7 +15,7 @@ This repository contains the code and data analysis for the project investigatin
 10. [Contact](#contact)
 
 ## Project Overview
-This project explores the longitudinal interactions between RSV and four bacterial pathogens (Streptococcus pneumoniae [SP], Moraxella catarrhalis [MC], Staphylococcus aureus [SA], and Haemophilus influenzae [HI]) using a birth cohort dataset from mother-infant pairs in Lusaka, Zambia. Individuals were categorized as either coinfected with RSV and one or more bacterial species, solely infected with one or more bacterial species, solely infected by RSV, or not infected by either bacteria or virus.
+This project explores the longitudinal interactions between RSV and four bacterial pathogens (Streptococcus pneumoniae (SP), Moraxella catarrhalis (MC), Staphylococcus aureus (SA), and Haemophilus influenzae (HI)) using a birth cohort dataset from mother-infant pairs in Lusaka, Zambia. Individuals were categorized as either coinfected with RSV and one or more bacterial species, solely infected with one or more bacterial species, solely infected by RSV, or not infected by either bacteria or virus.
 
 To simplify the analysis of potential interactions between RSV and each bacterial species, we examined sequential pairs of infections for each individual, focusing on one bacterial species at a time. Individuals were classified based on the first occurrence of RSV relative to a particular bacterial species (SP, MC, SA, or HI). For each potential viral-bacterial interaction, we categorized individuals into six groups:
 
