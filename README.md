@@ -16,7 +16,7 @@ This repository contains the code and data analysis for the project investigatin
 10. [Contact](#contact)
 
 ## Project Overview
-This project explores the longitudinal interactions between RSV and four bacterial pathogens (SP, MC, SA, and HI) using datasets from mother-infant pairs from Lusaka Zambia. We examined various scenarios, including:
+This project explores the longitudinal interactions between RSV and four bacterial pathogens (SP, MC, SA, and HI) using a birth cohort data set from mother-infant pairs from Lusaka, Zambia. We examined various scenarios, including:
 - **RSV First, Bacteria Later (RSV->B)**: Infants who acquired RSV first and later the bacterial infection.
 - **Bacteria First, RSV Later (B->RSV)**: Infants who acquired the bacterial infection first and later RSV.
 - **Simultaneous Detection (RSV & B)**: Infants in whom both RSV and the bacterial pathogen were detected at the same time.
@@ -30,13 +30,9 @@ We use generalized additive models (GAM) to analyze and visualize the temporal r
 
 
 ## Data Description
-- **Data Source**: Describe the source and nature of your data, including any preprocessing steps.
-- **Data Files**: Provide a brief description of each data file.
-  - `RSV_SP_data.csv`: Contains longitudinal data of RSV-SP interactions.
-  - `RSV_MC_data.csv`: Contains data for RSV-MC interactions.
-  - `RSV_SA_data.csv`: Contains data for RSV-SA interactions.
-  - `RSV_HI_data.csv`: Contains data for RSV-HI interactions.
-  - `control_data.csv`: Contains data for infants with bacterial carriage without prior RSV infection.
+- **Data Source**: The data analyzed in this project was collected during our previous project Southern Africa Mother Infant Pertusis Study (SAMIPS).
+- **Data Files**: We provide a folder for each RSV-bacterial interaction labeled by their corresponding acronym (SP,MC,SA,HI). Within each folder you will find a folder named "GAM" and another folder named "Matlab files".  
+- Within the "Matlab files" you will find the necessary data files containing the information of mothers and infants who acquired RSV and/or the corresponding bacteria. 
 
 ## Installation
 ### Prerequisites
