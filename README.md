@@ -28,10 +28,6 @@ To simplify the analysis of potential interactions between RSV and each bacteria
 
 We use generalized additive models (GAM) to analyze and visualize the temporal relationship between RSV infection and subsequent bacterial carriage for each pathogen separately under these various scenarios.
 
-## Directory Structure
-
-
-
 ## Data Description
 - **Data Source**: The data analyzed in this project was collected during our previous project Southern Africa Mother Infant Pertusis Study (SAMIPS),  [Gill et al. 2016](https://academic.oup.com/cid/article/63/suppl_4/S154/2526406?login=true#google_vignette)
 .
