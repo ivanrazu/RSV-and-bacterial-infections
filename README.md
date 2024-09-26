@@ -1,4 +1,4 @@
-# RSV and Bacterial Interactions
+# Sequential RSV and bacterial infections in the nasopharynx of Zambian infants and mothers
 
 This repository contains the code and data analysis for the project investigating the interactions between Respiratory Syncytial Virus (RSV) and bacterial infections. The project specifically focuses on the effects sequential RSV-Bacterial (B) interactions with the bacterial species:
 - **Streptococcus pneumoniae (SP)**
@@ -29,7 +29,8 @@ We use generalized additive models (GAM) to analyze and visualize the temporal r
 
 
 ## Data Description
-- **Data Source**: The data analyzed in this project was collected during our previous project Southern Africa Mother Infant Pertusis Study (SAMIPS).
+- **Data Source**: The data analyzed in this project was collected during our previous project Southern Africa Mother Infant Pertusis Study (SAMIPS),  [Gill et al. 2016](https://academic.oup.com/cid/article/63/suppl_4/S154/2526406?login=true#google_vignette)
+.
 - **Data Files**: We provide a folder for each RSV-bacterial interaction labeled by their corresponding acronym (SP,MC,SA,HI). Within each folder you will find a folder named "GAM" and another folder named "Matlab files".  
 - Within the "Matlab files" you will find the necessary data files containing the information of mothers and infants who acquired RSV and/or the corresponding bacteria and the Matlab scripts to generate the figures in the manuscript.
 - Within the "Gam" folder, you will find the necessary data files and R scripts to generate the generalized additive model plots shown in Figures 5 and 6 in the main manuscript. 
