@@ -32,7 +32,7 @@ We use generalized additive models (GAM) to analyze and visualize the temporal r
 ## Data Description
 - **Data Source**: The data analyzed in this project was collected during our previous project Southern Africa Mother Infant Pertusis Study (SAMIPS).
 - **Data Files**: We provide a folder for each RSV-bacterial interaction labeled by their corresponding acronym (SP,MC,SA,HI). Within each folder you will find a folder named "GAM" and another folder named "Matlab files".  
-- Within the "Matlab files" you will find the necessary data files containing the information of mothers and infants who acquired RSV and/or the corresponding bacteria. 
+- Within the "Matlab files" you will find the necessary data files containing the information of mothers and infants who acquired RSV and/or the corresponding bacteria and the Matlab scripts to generate the figures in the manuscript. 
 
 ## Installation
 ### Prerequisites
