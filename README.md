@@ -1,6 +1,6 @@
 # RSV and Bacterial Interactions
 
-This repository contains the code and data analysis for the project investigating the interactions between Respiratory Syncytial Virus (RSV) and bacterial infections. The project specifically focuses on the effects of prior RSV infection on the probability of subsequent carriage of four bacterial species:
+This repository contains the code and data analysis for the project investigating the interactions between Respiratory Syncytial Virus (RSV) and bacterial infections. The project specifically focuses on the effects sequential RSV-Bacterial (B) interactions with the bacterial species:
 - **Streptococcus pneumoniae (SP)**
 - **Moraxella catarrhalis (MC)**
 - **Staphylococcus aureus (SA)**
@@ -20,10 +20,10 @@ This project explores the longitudinal interactions between RSV and four bacteri
 - **RSV First, Bacteria Later (RSV->B)**: Infants who acquired RSV first and later the bacterial infection.
 - **Bacteria First, RSV Later (B->RSV)**: Infants who acquired the bacterial infection first and later RSV.
 - **Simultaneous Detection (RSV & B)**: Infants in whom both RSV and the bacterial pathogen were detected at the same time.
-- **Virus-Only Cases**: Infants who only acquired RSV without any bacterial infection.
-- **Bacteria-Only Cases**: Infants who only acquired one or more bacterial infections without RSV.
+- **Virus-Only Cases(RSV)**: Infants who only acquired RSV without any bacterial infection.
+- **Bacteria-Only Cases(B)**: Infants who only acquired one or more bacterial infections without RSV.
 
-We use generalized additive models (GAM) to analyze and visualize the relationship between RSV infection and subsequent bacterial carriage for each pathogen separately under these various scenarios.
+We use generalized additive models (GAM) to analyze and visualize the temporal relationship between RSV infection and subsequent bacterial carriage for each pathogen separately under these various scenarios.
 
 ## Directory Structure
 
