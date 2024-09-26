@@ -15,12 +15,18 @@ This repository contains the code and data analysis for the project investigatin
 10. [Contact](#contact)
 
 ## Project Overview
-This project explores the longitudinal interactions between RSV and four bacterial pathogens (SP, MC, SA, and HI) using a birth cohort data set from mother-infant pairs from Lusaka, Zambia. We examined various scenarios, including:
-- **RSV First, Bacteria Later (RSV->B)**: Infants who acquired RSV first and later the bacterial infection.
-- **Bacteria First, RSV Later (B->RSV)**: Infants who acquired the bacterial infection first and later RSV.
-- **Simultaneous Detection (RSV & B)**: Infants in whom both RSV and the bacterial pathogen were detected at the same time.
-- **Virus-Only Cases(RSV)**: Infants who only acquired RSV without any bacterial infection.
-- **Bacteria-Only Cases(B)**: Infants who only acquired one or more bacterial infections without RSV.
+This project explores the longitudinal interactions between RSV and four bacterial pathogens (Streptococcus pneumoniae [SP], Moraxella catarrhalis [MC], Staphylococcus aureus [SA], and Haemophilus influenzae [HI]) using a birth cohort dataset from mother-infant pairs in Lusaka, Zambia. Individuals were categorized as either coinfected with RSV and one or more bacterial species, solely infected with one or more bacterial species, solely infected by RSV, or not infected by either bacteria or virus.
+
+To simplify the analysis of potential interactions between RSV and each bacterial species, we examined sequential pairs of infections for each individual, focusing on one bacterial species at a time. Individuals were classified based on the first occurrence of RSV relative to a particular bacterial species (SP, MC, SA, or HI). For each potential viral-bacterial interaction, we categorized individuals into six groups:
+
+1. **Bacteria First, RSV Later (B → RSV)**: Individuals initially infected with the specific bacterium and subsequently found infected with RSV at a later visit.
+2. **Simultaneous Detection (B & RSV)**: Individuals in whom both RSV and the bacterium were detected for the first time at the same visit.
+3. **RSV First, Bacteria Later (RSV → B)**: Individuals in whom RSV was detected first, followed by the specific bacterium at a later visit.
+4. **Bacteria Only (B Only)**: Individuals who acquired the specific bacterium without any evidence of RSV infection (note that they may have been infected with other bacteria).
+5. **RSV Only (RSV Only)**: Individuals infected with RSV but not the specific bacterium under consideration at the time of analysis (note that they may have been infected with other bacteria).
+6. **Neither (Neither)**: Individuals who remained free of both RSV and the specific bacterium under consideration during the study duration (note that they may have been infected with other bacteria).
+
+This classification scheme allows us to systematically investigate the interactions between RSV and each bacterial species within this population.
 
 We use generalized additive models (GAM) to analyze and visualize the temporal relationship between RSV infection and subsequent bacterial carriage for each pathogen separately under these various scenarios.
 
