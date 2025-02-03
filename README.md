@@ -8,9 +8,8 @@ This repository contains the code and data analysis for the project investigatin
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
-2. [Directory Structure](#directory-structure)
-3. [Data Description](#data-description)
-6. [Scripts and Analysis](#scripts-and-analysis)
+2. [Data Description](#data-description)
+3. [Installation](#installation)
 9. [License](#license)
 10. [Contact](#contact)
 
